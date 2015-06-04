@@ -9,6 +9,9 @@
 	top: 0;
 	bottom: 0;
 	font-size: 12px;
+	-webkit-transition: .1s linear;
+	-moz-transition: .1s linear;
+	-ms-transition: .1s linear;
 	transition: .1s linear;
 	opacity: 1;
 	cursor: pointer;
@@ -39,5 +42,8 @@
 }
 
 #back-to-top-btn > span {
+	-webkit-transition: .1s linear;
+	-moz-transition: .1s linear;
+	-ms-transition: .1s linear;
 	transition: .1s linear;
 }
