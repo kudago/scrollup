@@ -1,7 +1,7 @@
 {
   "name": "scrollup",
   "description": "Scrollup component",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "dependencies": {
     "scroll-to": "^0.0.2",
     "queried": "^1.4.1",
