@@ -1,0 +1,43 @@
+#back-to-top-btn {
+	text-decoration: none;
+	background: none;
+	border-bottom: none;
+	color: var(--text);
+	padding: 14px 22px;
+	line-height: 15px;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	font-size: 12px;
+	transition: .1s linear;
+	opacity: 1;
+	cursor: pointer;
+	text-align: center;
+	white-space: nowrap;
+	display: inline-block;
+}
+#back-to-top-btn > span {
+	text-decoration: none;
+	color: #2f3235;
+	border-bottom: 1px solid rgba(47, 50, 53, 0.25);
+}
+#back-to-top-btn:visited > span {
+	border-bottom-color: #2f3235;
+}
+#back-to-top-btn:hover > span {
+	color: hsla(210.0, 6.0%, 0%, 1.0);
+	border-bottom-color: hsla(210.0, 6.0%, 0%, 1.0);
+}
+
+@media (max-width: 1490px) {
+	#back-to-top-btn {
+		display: none!important;
+	}
+}
+#back-to-top-btn:hover {
+	background-color: hsla(0.0, 0.0%, 100%, 0.45);
+}
+
+#back-to-top-btn > span {
+	transition: .1s linear;
+}
