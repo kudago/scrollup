@@ -1,35 +1,37 @@
 var scrollTo = require('scroll-to');
 var extend = require('xtend/mutable');
-var q = require('queried');
 
 function ScrollUp(el, options){
 
 	if (!(this instanceof ScrollUp)) return new ScrollUp (el, options);
 
-	if (el.length) {
-		//array or DOM collection
-		this.el = el[0];
-	} 
-	else if (el instanceof Element){
-		//selector or DOM element
-		this.el = q(el);
+	//check what parametrs are recieved 
+	if (arguments[1]){
+		this.el = el;
+	}else{
+		if(arguments[0]){
+			if(arguments[0] instanceof Element){
+				this.el = el;
+			}else {
+				options = el;
+			}
+		}
 	}
 
 	if (!this.el){
 		//if el isn't provided
-		options = arguments[0];
 		this.el = document.createElement('div');
-		document.body.appendChild(this.el);
+		this.el.innerHTML = "▲<br><span>" + "back to top" + "</span>";
+		this.appendEl.appendChild(this.el);
 	}
 
 	extend(this, options);
 
-	this.el.innerHTML = this.text;
-	this.el.id = "back-to-top-btn";
+	this.el.classList.add("back-to-top-btn");
 	this.el.setAttribute('hidden', true);
 
-	window.onscroll = this.hideShow.bind(this);
-	this.el.onclick = this.moveToTop.bind(this);
+	window.addEventListener('scroll', this.hideShow.bind(this));
+	this.el.addEventListener('click', this.moveToTop.bind(this));
 }
 
 var proto = ScrollUp.prototype;
@@ -37,8 +39,8 @@ var proto = ScrollUp.prototype;
 //defaults
 proto.scrollDistance = 900;
 proto.animateScrollDuration = 500;
-proto.text = "back to top";
-proto.ease =  "out-cube";
+proto.ease = "out-cube";
+proto.appendEl = document.body;
 	
 
 proto.hideShow = function(){
@@ -48,7 +50,7 @@ proto.hideShow = function(){
 	if(pageY > innerHeight){
 		this.el.removeAttribute('hidden');
 	}else{
-	this.el.setAttribute('hidden', true);
+		this.el.setAttribute('hidden', true);
 	}
 }
 
