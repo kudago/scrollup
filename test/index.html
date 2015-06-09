@@ -2,17 +2,12 @@
 
   <head>
   	<meta charset="utf-8">
-    <link rel="stylesheet" href="scrollup.css">
+    <link rel="stylesheet" href="./scrollup.css">
     <script src="bundle.js"></script>
 
     <style>
         *{
           box-sizing: border-box;
-        }
-        .scrollEl{
-          width: 100px;
-          height: 50px;
-          background-color: blue!important;
         }
         .middle{
           width: 50%;
@@ -25,7 +20,6 @@
   </head>
 
   <body>
-    <div class="scrollEl"></div>
   	<div class="middle">
       قصة جميلة وطريفة ومعبرة أعجبتني أحببت أن أنقلها لكم لتعم الفائدة.
       الأسد - كالعادة - ملك الغابة وكان جائعاً
@@ -164,8 +158,7 @@
     </div>
     <script>
         var ScrollUp = require('scrollup');
-        var elem = document.querySelector('.scrollEl');
-        new ScrollUp( elem, {text: "▲<br><span>" + "back to top" + "</span>"});
+        new ScrollUp();
     </script>
   </body>
 
