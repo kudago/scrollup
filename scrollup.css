@@ -21,7 +21,7 @@
 	z-index: 1000;
 }
 @media (max-width: 1490px) {
-	#back-to-top-btn {
+	.back-to-top-btn {
 		display: none!important;
 	}
 }
