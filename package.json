@@ -3,16 +3,21 @@
   "description": "Scrollup component",
   "version": "1.0.1",
   "dependencies": {
-    "scroll-to": "^0.0.2",
+    "scroll-to": "^0.0.3",
     "queried": "^1.4.1",
     "xtend": "^4.0.0"
   },
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "browserify -r ./index.js:scrollup -r scroll-to -r xtend > test/bundle.js"
   },
   "author": {
-    "name": "nevel"
+    "name": "Anny Case"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kudago/scrollup.git"
   },
   "license": "mit",
   "_id": "scrollup@1.0.0",
@@ -30,7 +35,7 @@
   },
   "maintainers": [
     {
-      "name": "nevel",
+      "name": "Anny Case",
       "email": "case.anny@gmail.com"
     }
   ],
